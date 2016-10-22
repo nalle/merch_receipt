@@ -18,7 +18,7 @@ function submitForm() {
 			+ (currentdate.getMonth()+1)  + "-" 
 			+ currentdate.getDate() + " "  
 			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes();
+			+ (currentdate.getMinutes()<10?'0':'') + currentdate.getMinutes();
 		calculateCenter('customer_text_shirt',document.getElementById('text').value);
 		document.getElementById('store_text').innerHTML = "<h4>"+document.getElementById('text').value+"</h4>";
 		document.getElementById('customer_text').innerHTML = "<h4>"+document.getElementById('text').value+"</h4>";
