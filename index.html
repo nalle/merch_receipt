@@ -1,0 +1,179 @@
+<html>
+	<head>
+	<title>Merch receipt</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="css/print.css" rel="stylesheet">
+	<script src="js/print.js"></script>
+	</head>	
+	<body>
+		<div class="container" id="form" >
+   			<form class="well form-horizontal" id="tshirt_form" name="tshirt_form">
+			<fieldset>
+			<div class="form-group">
+				<div class="col-sm-6">
+					<label class="col-md-6 control-label">Text</label>  
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<input name="text" id="text" placeholder="Text" value="" class="form-control" type="text" required autofocus>
+						</div>
+					</div>
+					<label class="col-md-6 control-label">Color</label>  
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<select name="color" id="color" class="form-control" style="width:196px">
+								<option name="Orange" >Orange</option>
+								<option name="Pink" >Pink</option>
+								<option name="Blue" >Blue</option>
+								<option name="Green" >Green</option>
+								<option name="Gold" >Gold</option>
+								<option name="Silver" >Silver</option>
+								<option name="Red" >Red</option>
+								<option name="Black" >Black</option>
+								<option name="White" >White</option>
+							</select>
+						</div>
+					</div>
+					<label class="col-md-6 control-label">Font</label>  
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<select name="font" id="font" class="form-control" style="width:196px">
+								<option name="Bebas Nue" >Bebas Nue</option>
+								<option name="Eurostile" >Eurostile</option>
+								<option name="Agency" >Agency</option>
+								<option name="Unknown" >Unknown</option>
+							</select>
+						</div>
+					</div>
+					<label class="col-md-6 control-label">Size</label>  
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<select name="size" id="size" class="form-control" style="width:196px">
+								<option name="XS" >XS</option>
+								<option name="S" >S</option>
+								<option name="M" >M</option>
+								<option name="L" >L</option>
+								<option name="XL" >XL</option>
+								<option name="XXL" >XXL</option>
+							</select>
+						</div>
+					</div>
+				</div>
+		        <div class="col-md-6">
+		            <div class="form-group">
+					<label class="col-md-2 control-label"></label>
+			        	<div class="col-md-6" id="print">
+                    		<div name="Print" class="btn btn-warning" onclick="printForm();">
+								Print <span class="glyphicon glyphicon-send"></span>
+							</div>
+						</div>
+					</div>
+                </div>
+			</fieldset>
+			</form>
+			<div class="row error" id="error"> 
+				<div class="col-md-12">
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">Error <i class="glyphicon glyphicon-thumbs-down"></i> Text cannot be zero or more than twelve characters.
+						<button type="button" class="close" onClick="$('#error').hide()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="print_page" class="print">
+			<table cellpadding="0" cellspacing="0" border="0" style="width:100%" class="store" id="customer">
+				<tr>
+					<td class="store_fields">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td>
+									<h4>Text:</h4>
+								</td>
+								<td id="store_text">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Font:</h4>
+								</td>
+								<td id="store_font">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Size:</h4>	
+								</td>
+								<td id="store_size">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Color:</h4>
+								</td>
+								<td id="store_color">
+								</td>
+							</tr>	
+						</table>				
+					</td>
+					<td class="store_shirt_position">
+						<img src="img/tshirt.jpg" style="width: 200px; height:200px"></img>
+						<div class="wrapper caption input_text" id="store_text_shirt">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="store_time" class="store_time">
+					</td>
+				</tr>
+			</table>
+			<hr class="border"></hr>
+			<table cellpadding="0" cellspacing="0" border="0" style="width:100%" class="customer" id="customer">
+				<tr>
+					<td class="customer_fields">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td>
+									<h4>Text:</h4>
+								</td>
+								<td id="customer_text">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Font:</h4>
+								</td>
+								<td id="customer_font">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Size:</h4>
+								</td>
+								<td id="customer_size">
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<h4>Color:</h4>
+								</td>
+								<td id="customer_color">
+								</td>
+							</tr>	
+						</table>				
+					</td>
+					<td class="customer_shirt_position">
+						<img src="img/tshirt.jpg" style="width: 200px; height:200px"></img>
+						<div class="wrapper caption input_text" id="customer_text_shirt">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="customer_time" class="customer_time">
+					</td>
+				</tr>
+			</table>
+		</div>
+	<body>
+</html>
