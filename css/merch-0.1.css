@@ -1,0 +1,174 @@
+body {
+#	background: #282828;
+	background: #ffffff;
+}
+
+.tshirt_text {
+	color: white;
+	top: 15%;
+	left: 27%;
+	height: 10%;
+	width: 42%;
+	#border: 1px dotted white;
+	position: absolute;
+	font-size: 30px;
+}
+
+.nickname_input {
+	border: 1px solid black; 
+	width: 65%; 
+	height: 40px;
+}
+
+.background {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+	border-radius: 10px;
+	box-shadow: 1px 1px 0 #ccc, -1px -1px 0 #ccc, 0px -1px 0 #ccc, -1px 0px 0 #ccc;
+#	background-size: 100%;
+}
+
+.glow {
+	font-size: 80;
+    color: white;
+    text-shadow: 
+	-5px -5px 0 rgba(128,128,128, 0.2),
+	-5px -4px 0 rgba(128,128,128, 0.2),
+	-5px -3px 0 rgba(128,128,128, 0.2),
+	-5px -2px 0 rgba(128,128,128, 0.2),
+	-5px -1px 0 rgba(128,128,128, 0.2),
+	-5px 0px 0 rgba(128,128,128, 0.2),
+	-5px 1px 0 rgba(128,128,128, 0.2),
+	-5px 2px 0 rgba(128,128,128, 0.2),
+	-5px 3px 0 rgba(128,128,128, 0.2),
+	-5px 4px 0 rgba(128,128,128, 0.2),
+	-5px 5px 0 rgba(128,128,128, 0.2),
+	-4px -4px 0 rgba(128,128,128, 0.2), 
+	-4px -3px 0 rgba(128,128,128, 0.2), 
+	-4px -2px 0 rgba(128,128,128, 0.2), 
+	-4px -1px 0 rgba(128,128,128, 0.2), 
+	-4px 0px 0 rgba(128,128,128, 0.2), 
+	-4px 1px 0 rgba(128,128,128, 0.2), 
+	-4px 2px 0 rgba(128,128,128, 0.2), 
+	-4px 3px 0 rgba(128,128,128, 0.2), 
+	-4px 4px 0 rgba(128,128,128, 0.2), 
+	-3px -4px 0 rgba(128,128,128, 0.2), 
+	-3px -3px 0 rgba(128,128,128, 0.2), 
+	-3px -2px 0 rgba(128,128,128, 0.2), 
+	-3px -1px 0 rgba(128,128,128, 0.2), 
+	-3px 0px 0 rgba(128,128,128, 0.2), 
+	-3px 1px 0 rgba(128,128,128, 0.2), 
+	-3px 2px 0 rgba(128,128,128, 0.2), 
+	-3px 3px 0 rgba(128,128,128, 0.2), 
+	-3px 4px 0 rgba(128,128,128, 0.2), 
+	-2px -4px 0 rgba(128,128,128, 0.2), 
+	-2px -3px 0 rgba(128,128,128, 0.2), 
+	-2px -2px 0 rgba(128,128,128, 0.2), 
+	-2px -1px 0 rgba(128,128,128, 0.2), 
+	-2px 0px 0 rgba(128,128,128, 0.2), 
+	-2px 1px 0 rgba(128,128,128, 0.2), 
+	-2px 2px 0 rgba(128,128,128, 0.2), 
+	-2px 3px 0 rgba(128,128,128, 0.2), 
+	-2px 4px 0 rgba(128,128,128, 0.2), 
+	-1px -4px 0 rgba(128,128,128, 0.2), 
+	-1px -3px 0 rgba(128,128,128, 0.2), 
+	-1px -2px 0 rgba(128,128,128, 0.2), 
+	-1px -1px 0 rgba(128,128,128, 0.2), 
+	-1px 0px 0 rgba(128,128,128, 0.2), 
+	-1px 1px 0 rgba(128,128,128, 0.2), 
+	-1px 2px 0 rgba(128,128,128, 0.2), 
+	-1px 3px 0 rgba(128,128,128, 0.2), 
+	-1px 4px 0 rgba(128,128,128, 0.2), 
+	0px -4px 0 rgba(128,128,128, 0.2), 
+	0px -3px 0 rgba(128,128,128, 0.2), 
+	0px -2px 0 rgba(128,128,128, 0.2), 
+	0px -1px 0 rgba(128,128,128, 0.2), 
+	0px 0px 0 rgba(128,128,128, 0.2), 
+	0px 1px 0 rgba(128,128,128, 0.2), 
+	0px 2px 0 rgba(128,128,128, 0.2), 
+	0px 3px 0 rgba(128,128,128, 0.2), 
+	0px 4px 0 rgba(128,128,128, 0.2), 
+	1px -4px 0 rgba(128,128,128, 0.2), 
+	1px -3px 0 rgba(128,128,128, 0.2), 
+	1px -2px 0 rgba(128,128,128, 0.2), 
+	1px -1px 0 rgba(128,128,128, 0.2), 
+	1px 0px 0 rgba(128,128,128, 0.2), 
+	1px 1px 0 rgba(128,128,128, 0.2), 
+	1px 2px 0 rgba(128,128,128, 0.2), 
+	1px 3px 0 rgba(128,128,128, 0.2), 
+	1px 4px 0 rgba(128,128,128, 0.2), 
+	2px -4px 0 rgba(128,128,128, 0.2), 
+	2px -3px 0 rgba(128,128,128, 0.2), 
+	2px -2px 0 rgba(128,128,128, 0.2), 
+	2px -1px 0 rgba(128,128,128, 0.2), 
+	2px 0px 0 rgba(128,128,128, 0.2), 
+	2px 1px 0 rgba(128,128,128, 0.2), 
+	2px 2px 0 rgba(128,128,128, 0.2), 
+	2px 3px 0 rgba(128,128,128, 0.2), 
+	2px 4px 0 rgba(128,128,128, 0.2), 
+	3px -4px 0 rgba(128,128,128, 0.2), 
+	3px -3px 0 rgba(128,128,128, 0.2), 
+	3px -2px 0 rgba(128,128,128, 0.2), 
+	3px -1px 0 rgba(128,128,128, 0.2), 
+	3px 0px 0 rgba(128,128,128, 0.2), 
+	3px 1px 0 rgba(128,128,128, 0.2), 
+	3px 2px 0 rgba(128,128,128, 0.2), 
+	3px 3px 0 rgba(128,128,128, 0.2), 
+	3px 4px 0 rgba(128,128,128, 0.2), 
+	4px -4px 0 rgba(128,128,128, 0.2), 
+	4px -3px 0 rgba(128,128,128, 0.2), 
+	4px -2px 0 rgba(128,128,128, 0.2), 
+	4px -1px 0 rgba(128,128,128, 0.2), 
+	4px 0px 0 rgba(128,128,128, 0.2), 
+	4px 1px 0 rgba(128,128,128, 0.2), 
+	4px 2px 0 rgba(128,128,128, 0.2), 
+	4px 3px 0 rgba(128,128,128, 0.2), 
+	4px 4px 0 rgba(128,128,128, 0.2);
+}
+
+a:link {
+	color: white;
+    text-decoration: none;
+}
+
+a:visited {
+	color: white;
+    text-decoration: none;
+}
+
+a:hover {
+	color: white;
+    text-decoration: none;
+}
+
+a:active {
+	color: white;
+    text-decoration: none;
+}
+
+
+@font-face {
+	font-family: BebasNeue;
+	src: url(fonts/BebasNeue.otf);
+}
+@font-face {
+	font-family: AgencyFB;
+	src: url(fonts/AgencyFB-Bold.ttf);
+}
+@font-face {
+	font-family: Eurostile_Bold;
+	src: url(fonts/Eurostile-LT-Bold.ttf);
+}	
+@font-face {
+	font-family: Eurostile;
+	src: url(fonts/EurostileLTStd-DemiOblique.otf);
+}	
+@font-face {
+	font-family: TradeGothic;
+	src: url(fonts/TradeGothicLTB.otf);
+}
+
+
+.eurostile {
+	font-family: Eurostile;
+}

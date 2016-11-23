@@ -1,179 +1,193 @@
 <html>
 	<head>
 	<title>Merch receipt</title>
-	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="css/print-0.1.min.css" rel="stylesheet">
-	<script src="js/print-0.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--	<link href="css/print-0.1.min.css" rel="stylesheet">
+	<script src="js/print-0.1.min.js"></script>-->
+	<link href="css/print-0.1.css" rel="stylesheet">
+	<link href="css/merch-0.1.css" rel="stylesheet">
+	<script src="js/print-0.1.js"></script>
+	<script src="js/merch-0.1.js"></script>
 	</head>	
 	<body>
-		<div class="container" id="form" >
-   			<form class="well form-horizontal" id="tshirt_form" name="tshirt_form">
-			<fieldset>
-			<div class="form-group">
-				<div class="col-sm-6">
-					<label class="col-md-6 control-label">Text</label>  
-					<div class="col-md-6 inputGroupContainer">
-						<div class="input-group">
-							<input name="text" id="text" placeholder="Text" value="" class="form-control" type="text" required autofocus>
-						</div>
+		<div class="modal fade" id="error">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#x2717</button>
+						<h4 class="modal-title">An error has occured</h4>
 					</div>
-					<label class="col-md-6 control-label">Color</label>  
-					<div class="col-md-6 inputGroupContainer">
-						<div class="input-group">
-							<select name="color" id="color" class="form-control" style="width:196px">
-								<option name="Orange" >Orange</option>
-								<option name="Pink" >Pink</option>
-								<option name="Blue" >Blue</option>
-								<option name="Green" >Green</option>
-								<option name="Gold" >Gold</option>
-								<option name="Silver" >Silver</option>
-								<option name="Red" >Red</option>
-								<option name="Black" >Black</option>
-								<option name="White" >White</option>
-							</select>
-						</div>
+					<div class="modal-body" id="error_message">
 					</div>
-					<label class="col-md-6 control-label">Font</label>  
-					<div class="col-md-6 inputGroupContainer">
-						<div class="input-group">
-							<select name="font" id="font" class="form-control" style="width:196px">
-								<option name="Bebas Nue" >Bebas Nue</option>
-								<option name="Eurostile" >Eurostile</option>
-								<option name="Agency" >Agency</option>
-								<option name="Unknown" >Unknown</option>
-							</select>
-						</div>
-					</div>
-					<label class="col-md-6 control-label">Size</label>  
-					<div class="col-md-6 inputGroupContainer">
-						<div class="input-group">
-							<select name="size" id="size" class="form-control" style="width:196px">
-								<option name="XS" >XS</option>
-								<option name="S" >S</option>
-								<option name="M" >M</option>
-								<option name="L" >L</option>
-								<option name="XL" >XL</option>
-								<option name="XXL" >XXL</option>
-							</select>
-						</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+    
+		<div class="container background" id="form" style="margin-top:40px">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row" style="text-align: center">
+						<p class="glow eurostile"><i>PRINT YOUR NICKNAME</i></p>
 					</div>
 				</div>
-		        <div class="col-md-6">
-		            <div class="form-group">
-					<label class="col-md-2 control-label"></label>
-			        	<div class="col-md-6" id="print">
-                    		<div name="Print" class="btn btn-warning" onclick="printForm();">
-								Print <span class="glyphicon glyphicon-send"></span>
-							</div>
+				<div class="row" style="height: 190px">
+				</div>
+				<div class="row">
+					<div class="col-md-4" style="margin-left: 20px">
+						<img src="img/black_shirt.png" id="tshirt" width="350"></img>
+						<div class="wrapper caption tshirt_text" align="center" style="font-family: AgencyFB; text-valign: top; color: #ffffff" id="tshirt_text"></div>
+					</div>
+					<div class="col-md-4">
+						<div class="row" style="height: 30px">
+						</div>
+						<div class="row">
+							<p style="color: white; font-size: 45" class="eurostile"><i>NICKNAME</i></p>
+						</div>
+						<div class="row" style="margin-left: -10px; height: 70px">
+							<input type="text" name="nickname" class="input-lg nickname_input" id="nickname"  oninput="writeTextOnShirt()" autofocus>
+						</div>
+						<div class="row">
+							<p style="color: white; font-size: 30; margin-left: 25px" class="eurostile"><i>CHOOSE FONT</i></p>
+						</div>
+						<div class="row" style="height: 70px; margin-left: 15px; margin-top: -10px">
+							<p style="color: white; font-size: 50" class="eurostile">
+								<a href="#" onclick="setFont('AgencyFB')" id="AgencyFB">1</a>
+								<a href="#" onclick="setFont('BebasNeue')" id="BebasNeue">2</a>
+								<a href="#" onclick="setFont('Eurostile_Bold')" id="Eurostile_Bold">3</a>
+								<a href="#" onclick="setFont('TradeGothic')" id="TradeGothic">4</a>
+							</p>
+						</div>
+						<div class="row">
+							<p style="color: white; font-size: 30; margin-left: 35px" class="eurostile"><i>T-SHIRT SIZE</i></p>
+						</div>
+						<div class="row">
+							<p style="color: white; font-size: 25" class="eurostile">
+									<i><a href="#" onclick="setSize('XS')" id='XS'>XS</a></i>
+									<i><a href="#" onclick="setSize('S')" id='S'>S</a></i>
+									<i><a href="#" onclick="setSize('M')" id='M'>M</a></i>
+									<i><a href="#" onclick="setSize('L')" id='L'>L</a></i>
+									<i><a href="#" onclick="setSize('XL')" id='XL'>XL</a></i>
+									<i><a href="#" onclick="setSize('2XL')" id='2XL'>2XL</a></i>
+									<i><a href="#" onclick="setSize('3XL')" id='3XL'>3XL</a></i>
+							</p>
+						</div>
+						<div class="row">
+							<p style="color: white; font-size: 40; margin-left: 80px" class="eurostile"><i>AND COLOR -></i></p>
 						</div>
 					</div>
-                </div>
-			</fieldset>
-			</form>
-			<div class="row error" id="error"> 
-				<div class="col-md-12">
-					<div class="alert alert-danger alert-dismissible fade in" role="alert">Error <i class="glyphicon glyphicon-thumbs-down"></i> Text cannot be zero or more than twelve characters.
-						<button type="button" class="close" onClick="$('#error').hide()">
-							<span aria-hidden="true">&times;</span>
-						</button>
+					<div class="col-md-1">
+						<div class="row" style="height: 120px">
+						</div>
+						<div class="row">
+							<div class="row" style="background-color: #ffffff; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #fe612a; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #3196ce; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #000000; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #8a8a8a; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #88753d; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #fc0361; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #4cee0f; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="background-color: #b10021; height: 35px; width:150px" onclick="setColor(this);"></div>
+							<div class="row" style="height: 40px"></div>
+						</div>	
+					</div>
+					<div class="col-md-2">
+						<div class="row" style="height: 400px">
+						</div>
+						<div class="row" style="text-align: left; margin-left: 50px; margin-top: 10px">
+							<p style="color: white; font-size: 25" class="eurostile"><a href="#" onclick="printForm()"><i>DONE/PRINT</i></a></p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
 		<div id="print_page" class="print">
+			<div style="top: 600px; position: absolute;" class="eurostile">
+				Your t-shirt will be ready for pickup in 2-3 hours.
+			</div>
 			<table cellpadding="0" cellspacing="0" border="0" style="width:100%" class="store" id="customer">
 				<tr>
-					<td class="store_fields">
-						<table cellpadding="0" cellspacing="0" border="0">
+					<td class="store_fields eurostile">
+						<table cellpadding="0" cellspacing="0" border="0" style="width: 130px">
 							<tr>
 								<td>
 									<h4>Text:</h4>
 								</td>
-								<td id="store_text">
-								</td>
+								<td id="store_text"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Font:</h4>
 								</td>
-								<td id="store_font">
-								</td>
+								<td id="store_font"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Size:</h4>	
 								</td>
-								<td id="store_size">
-								</td>
+								<td id="store_size"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Color:</h4>
 								</td>
-								<td id="store_color">
-								</td>
+								<td id="store_color"></td>
 							</tr>	
 						</table>				
 					</td>
-					<td class="store_shirt_position">
-						<img src="img/tshirt.jpg" style="width: 200px; height:200px"></img>
-						<div class="wrapper caption input_text" id="store_text_shirt">
+					<td class="store_shirt_position" id="store_shirt">
+						<img src="img/white_shirt.png" style="width: 200px; height:200px"></img>
+						<div class="input_text" id="store_text_shirt">
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td id="store_time" class="store_time">
-					</td>
+					<td id="store_time" class="store_time eurostile"></td>
 				</tr>
 			</table>
 			<hr class="border"></hr>
 			<table cellpadding="0" cellspacing="0" border="0" style="width:100%" class="customer" id="customer">
 				<tr>
-					<td class="customer_fields">
-						<table cellpadding="0" cellspacing="0" border="0">
+					<td class="customer_fields eurostile">
+						<table cellpadding="0" cellspacing="0" border="0" style="width: 130px">
 							<tr>
 								<td>
 									<h4>Text:</h4>
 								</td>
-								<td id="customer_text">
-								</td>
+								<td id="customer_text"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Font:</h4>
 								</td>
-								<td id="customer_font">
-								</td>
+								<td id="customer_font"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Size:</h4>
 								</td>
-								<td id="customer_size">
-								</td>
+								<td id="customer_size"></td>
 							</tr>	
 							<tr>
 								<td>
 									<h4>Color:</h4>
 								</td>
-								<td id="customer_color">
-								</td>
+								<td id="customer_color"></td>
 							</tr>	
 						</table>				
 					</td>
-					<td class="customer_shirt_position">
-						<img src="img/tshirt.jpg" style="width: 200px; height:200px"></img>
-						<div class="wrapper caption input_text" id="customer_text_shirt">
+					<td class="customer_shirt_position" id="customer_shirt">
+						<img src="img/white_shirt.png" style="width: 200px; height:200px" id="customer_shirt"></img>
+						<div class="input_text" id="customer_text_shirt">
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td id="customer_time" class="customer_time">
-					</td>
+					<td id="customer_time" class="customer_time eurostile"></td>
 				</tr>
 			</table>
-		</div>
+		</div> 
 	<body>
 </html>
