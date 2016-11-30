@@ -21,8 +21,6 @@
 	@font-face {
 		font-family: TradeGothic;
 		src: url(fonts/TradeGothicLTB.otf);
-		font-family: TradeGothic;
-		src: url(fonts/TradeGothicLTB.otf);
 	}
 
 	@page {
@@ -78,7 +76,7 @@
 		position: absolute;
 	}
 	.customer_time {
-		top: 240px;
+		top: 210px;
 		position: absolute;
 	}
 	.grey {
